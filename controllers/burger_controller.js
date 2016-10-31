@@ -13,13 +13,6 @@ router.get('/', function (req, res) {
 	});
 });
 
-// router.get('/cats', function (req, res) {
-// 	cat.all(function (data) {
-// 		var hbsObject = { cats: data };
-// 		console.log(hbsObject);
-// 		res.render('index', hbsObject);
-// 	});
-// });
 
 router.post('/create', function (req, res) {
 	burger.create(req.body.burger, function () {
@@ -27,14 +20,10 @@ router.post('/create', function (req, res) {
 	});
 });
 
-//router.put('/update/:id', function (req, res) {
-// 	var condition = 'id = ' + req.params.id;
-
-//  	console.log('condition', condition);
-
-	//burger.update({ sleepy: req.body.sleepy }, condition, function () {
-	//	res.redirect('/');
-	//});
-//});
+router.put('/update/:id', function (req, res) {
+	burger.update(req.params.id, function () {
+		res.redirect('/');
+	});
+});
 
 module.exports = router;
