@@ -5,17 +5,18 @@ body{
 	background-position: center center;
 	background-attachment: fixed;
 
+
 }
 
 .mainContainer{
-	position: relative;
+	position: absolute;
 	width: 1000px;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.6);
 	left: 0; 
-		right: 0; 
-		margin-left: auto; 
-		margin-right: auto; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto; 
 }
 
 .center{
@@ -66,7 +67,7 @@ input[type=text] {
 	color: #ed1f2e;
 	font-weight: bold;
 	font-size: 16px;
-	width: 300px;
+	min-width: 300px;
 	background-color: rgba(255,255,255, 0.7);
 	border-radius: 4px;
 	margin: 20px 0px;
@@ -80,12 +81,20 @@ input[type=text] {
 	height: 35px;
 }
 
+.deleteButton{
+	background-color: #339FEE;
+}
+
 .eatButton{
+	background-color: #E85F0D;
+	
+}
+
+.burgerButton{
 	display:inline-block;
   	overflow: auto;
   	white-space: nowrap;
-  	margin:0px auto;
-	background-color: #E85F0D;
+  	margin:0px 5px;
 	border: none;
 	color: white;
 	padding: 5px 10px;
@@ -96,6 +105,7 @@ input[type=text] {
 	clear: both;
 	line-height: 20px;
 }
+
 .eatingArea{
 	overflow:auto;
 }

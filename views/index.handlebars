@@ -8,7 +8,7 @@
           {{#if this.devoured}}
           <form action="/update/{{this.id}}?_method=PUT" method="POST">
             <p class="burgerBox"> <img class="foodIcon" src="assets/img/burger.png" alt="Burger Logo">{{this.burger_name}} 
-                  <button type="submit" class="eatButton">Eat!</button>
+                  <button type="submit" class="eatButton burgerButton">Eat!</button>
                 </p>
             </form>
             
@@ -19,7 +19,11 @@
         <p class="headerText"> Well I'm Full</p>
         {{#each burgers}}
           {{#unless this.devoured}}
-            <p class="burgerBox"> <img class="foodIcon" src="assets/img/emptyPlate.png" alt="Burger Logo">{{this.burger_name}}</p>
+            <form action="/delete/{{this.id}}?_method=DELETE" method="POST">
+            <p class="burgerBox"> <img class="foodIcon" src="assets/img/emptyPlate.png" alt="Burger Logo">{{this.burger_name}}  
+            <button type="submit" class="deleteButton burgerButton">Clean UP!</button>
+                </p>
+            </form>
           {{/unless}}
         {{/each}} 
       </div>

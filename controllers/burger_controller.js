@@ -8,11 +8,10 @@ var burger = require('../models/burger.js');
 router.get('/', function (req, res) {
 	return burger.all(function (data) {
 		var hbsObject = { burgers: data };
-		console.log(hbsObject);
+		// console.log(hbsObject);
 		res.render('index', hbsObject);
 	});
 });
-
 
 router.post('/create', function (req, res) {
 	burger.create(req.body.burger, function () {
@@ -22,6 +21,12 @@ router.post('/create', function (req, res) {
 
 router.put('/update/:id', function (req, res) {
 	burger.update(req.params.id, function () {
+		res.redirect('/');
+	});
+});
+
+router.delete('/delete/:id', function (req, res) {
+	burger.delete(req.params.id, function () {
 		res.redirect('/');
 	});
 });
